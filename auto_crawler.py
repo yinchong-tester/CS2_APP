@@ -8,9 +8,9 @@ def get_hash_name_list():
     return hash_name_list
 
 def run_crawler_job(L):
-    '''
+    """
     输入名称列表，每一小时自动抓取所有饰品的价格数据，并存储到数据库
-    '''
+    """
     for name in L:
         try:
             get_skin_price(name)
@@ -24,4 +24,5 @@ hash_name_list = get_hash_name_list()
 while True:
     run_crawler_job(hash_name_list)
     print('休息时间')
+
     time.sleep(43200)
